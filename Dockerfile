@@ -1,4 +1,5 @@
 FROM adoptopenjdk:11-jre-hotspot
+VOLUME /tmp
 ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} /app.jar
+COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
